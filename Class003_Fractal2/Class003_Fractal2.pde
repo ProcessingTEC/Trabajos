@@ -31,11 +31,11 @@ void draw()
   
   for(Figure f : figures)
   {
-    if(abs(mouseX-f.v.x) < 100 && abs(mouseY-f.v.y) < 100)
+    if(abs(mouseX-f.v.x) < 50 && abs(mouseY-f.v.y) < 50)
     {
       stroke(127,0,0,5);
-      f.v.x = mouseX;
-      f.v.y = mouseY;
+      f.v.x += (mouseX - f.v.x)/100;
+      f.v.y += (mouseY - f.v.y)/100;
     }
     
     stroke(0);
