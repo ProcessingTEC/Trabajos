@@ -2,6 +2,7 @@
 void setup ()
 {
   size(600, 600);
+  stroke(204, 102, 0);
   strokeWeight(3);
 }
 
