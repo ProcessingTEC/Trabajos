@@ -1,3 +1,5 @@
+//Erick Hernandez Bonilla
+
 class Figure
 {
   PVector v;
