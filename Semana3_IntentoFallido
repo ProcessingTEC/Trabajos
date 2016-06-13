@@ -34,14 +34,14 @@ void CreateTree(PVector vector1,PVector vector2, float radians)
   {
     translate(vector2.x, vector2.y);
     PVector newVector2 = vector2.add(new PVector((distance*0.7), (distance*0.7)));
-    newVector2 = newVector2.rotate(radians);
+    newVector2.rotate(radians);
     //newVector2 = newVector2.mult(radians);
     //PVector newVector2 = PVector.fromAngle(radians);
     //newVector2 = newVector2.add(new PVector(100, 100));
     CreateTree(vector2, newVector2,radians);
     
     newVector2 = vector2.add(new PVector((distance*0.7), (distance*0.7)));
-    newVector2 = newVector2.rotate(-radians);
+    newVector2.rotate(-radians);
     //newVector2 = newVector2.mult(-radians);
     //newVector2 = PVector.fromAngle(-radians);
     //newVector2 = newVector2.add(new PVector(100, 100));
