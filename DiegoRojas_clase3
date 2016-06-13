@@ -1,0 +1,55 @@
+ArrayList<Rama> ramas = new ArrayList<Rama>();
+//float angle = 45.0;
+//float prop = map(0,0,0,0.1,1.9);
+int cantidad = 50;
+void setup() {
+  background(255); 
+  size(600, 600); 
+  translate(width/2, height);
+  /*float angle = map(mouseX,0,width,0, PI);
+  float prop = map(mouseY,0,height, 0.1,1.9);*/
+ // branch(200,prop,angle);
+ branch(200,0,0, 45);
+}
+
+void draw() {
+  background(255);
+  //translate(width/2, height);
+  //float angle = map(mouseX,0,width,0, PI);
+  //float prop = map(mouseY,0,height, 0.1,0.9);
+  //branch(200,0,0, 45);
+}
+
+void branch(float len, float x, float y, float a) {
+  line(x, y, x, -len);
+ /* float nx= cos(a)*len;
+  float ny = sin(a)*len;
+  ramas.add(new Rama(x,y,nx,ny));*/
+  x= cos(a)*len;
+  y = sin(a)*len;
+  if (len>10) {
+    rotate(a);
+    branch(len,x,y, a);
+    //rotate(-a);
+   // branch(len,x,y,a);
+   
+  }
+}
+//float dx= cos(baseangle + angle)*len
+//float dy = sin(baseangle + angle)*len
+class Rama{
+  PVector pInicio;
+  PVector pDestino;
+  color colorBola = 126;
+  //Rama izq, der;
+  Rama(float x1, float x2, float y1, float y2){
+    pInicio.x = x1;
+    pDestino.x = x2;
+    pInicio.y = y1;
+    pDestino.y = y2;
+  }
+  void Update(){
+    fill(colorBola,255*sin(frameCount/8),255,50);
+    line(pInicio.x,pInicio.y,pDestino.x,pDestino.y);
+  }
+}
